@@ -25,4 +25,9 @@
 - This project was to test the python library and see how it worked. 
 - Could make things more secure.
 
+# To Run:
+
+- Clone it.
+- Run index.html
+- Run app.py
 
