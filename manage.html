@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Passwords</title>
+</head>
+<body>
+  <h1>Password Manager</h1>
+
+  <!-- Add account/password -->
+  <h3>Add Password</h3>
+  <input id="account" placeholder="Account name" />
+  <input id="password" placeholder="Password" />
+  <button onclick="addPassword()">Add</button>
+
+  <!-- Get password -->
+  <h3>Get Password</h3>
+  <input id="getAccount" placeholder="Account name" />
+  <button onclick="getPassword()">Get All Password</button>
+  <pre id="output"></pre>
+
+  <!-- List accounts -->
+  <h3>All Accounts</h3>
+  <button onclick="listAccounts()">List All Accounts</button>
+  <pre id="listOutput"></pre>
+
+<script src="script.js"></script>
+</body>
+</html>
