@@ -1,10 +1,10 @@
 //to set master password
-
+const link = "http://127.0.0.1:5000";
 async function setMaster() {
     //   const account = document.getElementById("account").value;
       const master = document.getElementById("master").value;
 
-      const res = await fetch("http://127.0.0.1:5000/set_master", {
+      const res = await fetch(`${link}/set_master`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ master_password: master })
@@ -24,7 +24,7 @@ async function setMaster() {
 async function addPassword() {
       const account = document.getElementById("account").value;
       const password = document.getElementById("password").value;
-      const res = await fetch("/add", {
+      const res = await fetch(`${link}/add`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ account, password })
@@ -35,16 +35,15 @@ async function addPassword() {
 
     async function getPassword() {
       const account = document.getElementById("getAccount").value;
-      const res = await fetch(`/get/${account}`);
+      const res = await fetch(`${link}/get/${account}`);
       const data = await res.json();
       document.getElementById("output").innerText = JSON.stringify(data, null, 2);
     }
 
     async function listAccounts() {
-      const res = await fetch("/list");
+      const res = await fetch(`${link}/list`);
       const data = await res.json();
       document.getElementById("listOutput").innerText = JSON.stringify(data, null, 2);
     }
 
 
-    

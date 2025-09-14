@@ -22,7 +22,7 @@ def set_master():
     if not master_password:
         return jsonify({"error": "Master password required"}), 400
     master_key = pwm.generate_key(master_password)
-    return jsonify({"message": "Master password set ✅", "redirect": "/manage"})
+    return jsonify({"message": "Master password set ✅", "redirect": "http://127.0.0.1:5500/manage.html"})
 
 @app.route("/generate", methods=["POST"])
 def generate():
@@ -62,7 +62,7 @@ def get(account):
 
 @app.route("/list", methods=["GET"])
 def list_accounts():
-    accounts = pwm.list_accounts()
+    accounts = pwm.load_accounts()
     return jsonify({"accounts": accounts})
 
 if __name__ == "__main__":

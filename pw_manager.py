@@ -240,7 +240,7 @@ def get(ctx, account):
         # click.echo(f"Password for {account}: {password}")
         pyperclip.copy(password)
         click.echo(f"Password for {account} has been copied to clipboard ✅")
-        
+
     except Exception:
         click.echo("Failed to decrypt. Wrong master password?")
 
@@ -253,13 +253,12 @@ def load_accounts():
     return list(data["accounts"].keys())
 
 @cli.command()
-def list_accounts():
+def listaccounts():
     """List all stored accounts."""
     accounts = load_accounts()
     click.echo("Accounts:")
     for acc in accounts:
         click.echo(f"- {acc}")
-
 
 if __name__ == "__main__":
     cli()
